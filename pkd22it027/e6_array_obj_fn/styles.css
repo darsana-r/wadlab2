@@ -1,0 +1,60 @@
+body{
+    margin: 0;
+    
+}
+header{
+    background-image: linear-gradient(to right,rgb(28, 42, 102),rgb(101, 186, 214));
+    color: rgb(255, 255, 255);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.arr{
+    text-align: center;
+    padding:10px;
+    box-shadow:10px;
+}
+
+.obj h1{
+    text-align: center;
+    padding:10px;
+    box-shadow:10px;
+}
+
+.arr button{
+    background-color:rgb(11, 70, 119);
+    color:rgb(255, 255, 255);
+    margin:5px;
+    width:200px;
+    padding:10px;
+    border:solid;
+    border-radius: 10px;
+}
+
+.obj button{
+    background-color:rgb(11, 70, 119);
+    color:rgb(255, 255, 255);
+    margin:5px;
+    width:200px;
+    padding:10px;
+    border:solid;
+    margin-left:40%;
+    border-radius: 10px;
+}
+
+.input{
+    width:400px;
+    padding:10px;
+    background-color: rgba(184, 217, 255, 0.938);
+    border:none;
+    
+}
+
+ul li{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 400px;
+}
+

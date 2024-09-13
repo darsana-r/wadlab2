@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+
+    <style>
+        body {
+            margin: 0;
+        }
+        .main {
+            margin: 10%;
+            margin-top: 0px;
+            text-align: center;
+            width: 80%;
+        }
+        h1 {
+            padding: 5px;
+            margin-top: 0;
+            background-color: rgb(197, 193, 255);
+            cursor: pointer; /* Added cursor pointer for better UX */
+        }
+        h2 {
+            padding: 5px;
+            background: #ebbffc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <h1 id="header">DOM- Document Object Model</h1>
+        <h2 id="subheader1">Finding HTML Elements by ID.</h2>
+        <p id="para"></p>
+
+        <h2 id="subheader2">Finding HTML Elements by Tag Name.</h2>
+        <p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+        <p id="tagname"></p>
+
+        <h2 class="cls" id="subheader3">Finding HTML Elements by Class Name.</h2>
+        <p class="cls">This example demonstrates the <b>getElementsByClassName</b> method.</p>
+        <p id="class"></p>
+
+        <form>
+            <h2>Finding HTML Elements by Name.</h2>
+
+            Rose:
+            <input name="Flowers" type="checkbox" value="Cats">
+            Hibiscus:
+            <input name="Flowers" type="checkbox" value="Dogs">
+            Jasmine:
+            <input name="Flowers" type="checkbox" value="Cow">
+
+            <p>Number of elements with name="Flowers" is: </p>
+            <p id="demo"></p>
+        </form>
+    </div>
+
+    <div></div>
+
+    <script>
+        document.getElementById("para").innerHTML = "The HTML DOM can be accessed with JavaScript (and with other programming languages)In the DOM, all HTML elements are defined as objects.The programming interface is the properties and methods of each object.";
+
+        const y = document.getElementsByTagName("p");
+        document.getElementById("tagname").innerHTML = "TagName contain word : " + y[1].innerHTML;
+
+        const x = document.getElementsByClassName("cls");
+
+        // Click event for h1
+        document.getElementById("header").addEventListener("click", function() {
+            this.style.backgroundColor = "lightblue";
+        });
+
+        // Mouseover event for h2
+        document.getElementById("subheader1").addEventListener("mouseover", function() {
+            this.innerHTML = "You hovered over me!";
+        });
+
+        // Change event for checkboxes
+        const checkboxes = document.getElementsByName("Flowers");
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener("change", function() {
+                let count = 0;
+                checkboxes.forEach(box => {
+                    if (box.checked) count++;
+                });
+                document.getElementById("demo").innerHTML = "Number of elements with name='Flowers' is: " + count;
+            });
+        });
+
+        function mouseoverevent()
+	{
+		alert("This is JavaTpoint");
+	}
+	//-->
+
+<p onmouseover="mouseoverevent()"> Keep cursor over me</p>
+    </script>
+</body>
+
+</html>

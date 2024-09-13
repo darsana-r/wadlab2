@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .main {
+
+            margin: 10%;
+            margin-top: 0px;
+            text-align: center;
+            width: 80%;
+        }
+
+        h1 {
+            padding: 5px;
+            margin-top: 0;
+            background-color: rgb(197, 193, 255);
+        }
+        .button{
+            border:solid;
+            margin-top:10px;
+            width:100px;
+            padding:10px;
+            background: #1e7cb3;
+            color: azure;
+        }
+
+        h2 {
+            padding: 5px;
+            background: #ebbffc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <h1 onmouseover="mouseoverevent()">DOM- Document Object Model</h1>
+        <h2>Finding HTML Elements by ID.</h2>
+        <p id="para"></p>
+
+        <h2>Finding HTML Elements by Tag Name.</h2>
+        <p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+        <p id="tagname"></p>
+
+
+        <h2 class="cls">Finding HTML Elements by Class Name.</h2>
+        <p class="cls">This example demonstrates the <b>getElementsByClassName</b> method.</p>
+        <p id="class"></p>
+
+        <form>
+            <h2>Finding HTML Elements by Name.</h2>
+
+            Rose:
+            <input name="Flowers" type="checkbox" value="Cats"><br>
+            Hibiscus:
+            <input name="Flowers" type="checkbox" value="Dogs"><br>
+            Jasmine:
+            <input name="Flowers" type="checkbox" value="Cow"><br>
+
+
+            <input type="button" onclick="clickevent()" value="Count" class="button">
+
+            <p>Number of elements with name="Flowers" is: </p>
+
+            <h3 id="demo"></h3>
+        </form>
+
+    </div>
+
+    <script>
+
+        function clickevent() {
+            let num = document.getElementsByName("Flowers").length;
+            document.getElementById("demo").innerHTML = num;
+        }
+        function mouseoverevent() {
+            alert("It is a mouseover Event _ YOU CLICKED THE HEADING");
+        }
+        document.getElementById("para").innerHTML = "The HTML DOM can be accessed with JavaScript (and with other programming languages)In the DOM, all HTML elements are defined as objects.The programming interface is the properties and methods of each object.";
+
+        const y = document.getElementsByTagName("p");
+        document.getElementById("tagname").innerHTML = "TagName contain word : " + y[1].innerHTML;
+
+        const x = document.getElementsByClassName("cls");
+        document.getElementById("class").innerHTML = 'The first paragraph (index 0) with class="intro" is: ' + x[0].innerHTML + "  " + x[1].innerHTML;
+
+
+    </script>
+
+</body>
+
+</html>
